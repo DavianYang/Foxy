@@ -3,15 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "busboy": "~0.3.1",
+    "firebase": "~5.9.3",
+    "i": "~0.3.6",
+    "icomoon-react": "~1.0.0",
+    "npm": "~6.9.0",
+    "prop-types": "~15.7.2",
+    "react": "~16.8.6",
+    "react-dom": "~16.8.6",
+    "react-image": "~2.1.1",
+    "react-redux": "~6.0.1",
+    "react-router-dom": "~5.0.0",
+    "react-scripts": "~2.1.8",
+    "redux": "~4.0.1",
+    "redux-thunk": "~2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:sass": "node-sass src/scss/main.scss src/css/style.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +33,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "node-sass": "^4.11.0"
+  }
 }
