@@ -11,7 +11,7 @@
 
 - Login Form
 
-- Sign Out Form
+- Sign In Form
 
 - Upload Photo
 
