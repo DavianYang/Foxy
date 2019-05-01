@@ -1,6 +1,6 @@
 .logo {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 5rem;
+    width: 5rem;
     padding:0 2.5rem;
     fill: var(--color-primary);
 }
@@ -11,7 +11,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
     &__input{
         font-family: inherit;
         font-size: inherit;
@@ -20,7 +19,7 @@
         padding: 1rem 2rem;
         border-radius: 10rem;
         color: inherit;
-        width: 40rem;
+        width: 55rem;
         transition: all .2s;
         margin-right: -3.25rem;
         &:focus {
@@ -99,8 +98,8 @@
 
     &__icon {
         fill: currentColor;
-        height: 2.25rem;
-        width: 2.25rem;
+        height: 2.5rem;
+        width: 2.5rem;
     }
 
 }
@@ -110,14 +109,14 @@
 .form {
 
     &__group:not(:last-child) {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     &__input {
-        font-size: 1.3rem;
+        font-size: 2rem;
         font-family: inherit;
         color: inherit;
-        padding: 1.4rem 1.8rem;
+        padding: 1.5rem 2rem;
         border-radius: 5px;
         background-color: var(--color-grey-light-5);
         border: none;
@@ -143,7 +142,7 @@
     }
 
     &__label {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-left: 2rem;
         margin-top: .7rem;
@@ -159,7 +158,7 @@
 
     &__upload-photo {
         min-width: 6rem;
-        height: 6rem;
+        height: 8rem;
         background-color: var(--color-grey-light-6);
         background-image: url('../img/SVG/image-inverted.svg');
         background-size: 3rem 3rem;
@@ -174,13 +173,19 @@
 
     &__list {
         font-family: inherit;
-        font-size: 1.3rem;
+        font-size: 1.8rem;
         font-weight: 400;
         letter-spacing: .1rem;
         padding: 0 2rem 2rem;
 
         & a {
             color: inherit;
+        }
+
+        & > * {
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
         }
     }
 
@@ -194,7 +199,7 @@
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 1.3rem 3rem;
+        padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: 10rem;
         transition: all .2s;
@@ -297,9 +302,9 @@
 
 .btn-inline {
     background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
-    font-size: 1.4rem;
+    font-size: 3rem;
     border: none;
-    padding: 1rem 1.5rem;
+    padding: 2rem 3rem;
     border-radius: 10rem;
     cursor: pointer;
     display: flex;
@@ -451,7 +456,7 @@
         
         &--main {
             display: block;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 700;
             color: var(--color-white);
         }
@@ -459,15 +464,15 @@
         &--sub {
             display: block;
             font-weight: 400;
-            font-size: 1.3rem;
+            font-size: 1.65rem;
             color: var(--color-white);
             margin-left: 1.2rem;
         }
     }
 
     &__search-input {
-        font-size: 1.8rem !important;
-        width: 55rem !important;
+        font-size: 2rem !important;
+        width: 70rem !important;
         padding: 1rem 2.5rem !important;
         margin: 2.8rem 0 1rem;
     }
@@ -478,7 +483,7 @@
             text-transform: uppercase;
             &--main {
                 display: block;
-                font-size: 5rem;
+                font-size: 5.8rem;
                 font-weight: 400;
                 color: var(--color-white);
                 align-self: center;
@@ -487,7 +492,7 @@
             &--sub {
                 display: block;
                 font-weight: 400;
-                font-size: 1.3rem;
+                font-size: 1.7rem;
                 color: var(--color-white);
                 margin-left: 1.2rem;
                 align-self: center;
@@ -525,7 +530,7 @@
    
     &__content{
         @include absCenter;
-        min-width: 150rem;
+        width: 135%;
         // height: 100%;
         background-color: var(--color-white);
         box-shadow: 0 2rem 4rem rgba(var(--color-black), $alpha: .2);
@@ -536,12 +541,22 @@
         transform: translate(-50%, -50%) scale(.5);
         transition: all .45s .2s;
         backface-visibility: hidden;
-        display: flex
+    }
+
+    &__left { 
+        width: 60%;
+        display: table-cell;
+    }
+
+    &__right {
+        width: 40%;
+        display: table-cell;
+        vertical-align: middle;
     }
 
     &__icon {
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 5rem;
+        width: 5rem;
         fill: var(--color-white);
     }
 
@@ -550,37 +565,36 @@
     }
 
     &__input {
-        font-size: 2.3rem;
+        font-size: 3.2rem;
     }
 
     &__btn {
-        font-size: 2.3rem;
+        // font-size: 2.3rem;
     }
     
     &__love, &__collection {
-        padding: 1rem;
+        padding: 1.3rem;
         background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
         border-radius: 10rem;
         
     }
 
 
-    &__right {
-        flex: 0 0 60%;
-        // display: table-cell;
-        // vertical-align: middle;
-        display: flex;
-        align-content: center;
-        flex-direction: column;
-        position: relative;
-        justify-content: space-around;
-    }
+    // &__right {
+    //     flex: 0 0 60%;
+    //     // display: table-cell;
+    //     // vertical-align: middle;
+    //     display: flex;
+    //     align-content: center;
+    //     flex-direction: column;
+    //     position: relative;
+    //     justify-content: space-around;
+    // }
 
 
     &__img {
         display: block;
         width: 100%;
-        height: 100%;
     }
 
     &__comment {
@@ -652,7 +666,7 @@
     &__avatar {
         display: block;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         margin: 4rem 0 0 1.5rem;
     }
 
@@ -667,12 +681,13 @@
     }
 
     &__text {
-        font-size: 2rem;
+        font-size: 3.5rem;
         margin-bottom: 1rem;
 
     }
     &__date {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        color: var(--color-gray);
     }
 
     &__button {
@@ -681,7 +696,7 @@
 
     &__action{
         float: right;
-        font-size: 1.3rem;
+        font-size: 2.3rem;
         li {
             display: inline;
             margin: -2px;

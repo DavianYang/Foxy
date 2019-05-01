@@ -13,6 +13,11 @@ class Home extends React.Component {
         super(props);
     }
 
+    handleFilter = e => {
+        const text = e.target.value.toLowerCase();
+        
+    }
+
     render(){
         const currentUser = this.props.currentUser;
         return(
@@ -28,7 +33,7 @@ class Home extends React.Component {
                             </span>
     
                             <form action="#" className="search">
-                                <input className="search__input home__search-input" placeholder="Search for free photos" />
+                                <input className="search__input home__search-input" placeholder="Search for free photos" onKeyUp={this.handleFilter}/>
                             </form>
     
                             <span className="home__primary--sub">
@@ -42,7 +47,7 @@ class Home extends React.Component {
                                     Find your inspiration.
                                 </span>
                                 <span className="home__signup-primary--sub">
-                                    Join the Flickr community, home to tens of billions of photos and 2 million groups.
+                                    Join the Foxy community, home to tens of billions of photos and 2 million groups.
                                 </span>
 
                                 <span className="home__signup-button">

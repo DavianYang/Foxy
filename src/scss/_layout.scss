@@ -2,7 +2,7 @@
     height: 7rem;
     background-color: #fff;
     border-bottom: var(--line);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@
     background-size: 100%;
     border-radius: 3px;
     box-shadow: var(--shadow-light);
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
 
     &__form {
@@ -38,7 +38,7 @@
     }
 
     &__heading {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         text-transform: uppercase;
         display: inline-block;
         font-weight: 700;
@@ -53,7 +53,7 @@
 
 .footer {
     background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
-    padding: 10rem 0;
-    font-size: 1.2rem;
+    padding: 14rem 0;
+    font-size: 1.4rem;
     color: var(--color-white);
 }

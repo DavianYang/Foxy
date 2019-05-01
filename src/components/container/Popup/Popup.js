@@ -87,9 +87,9 @@ class Popup extends React.Component {
                                     {
                                         currentPhoto.comment.map((comment, index) => {
                                             return ( 
-                                                <div className="comments-wrap">
+                                                <div className="comments-wrap" key={index}>
                                                 <div className="comments-wrap__photo">
-                                                    <span className="comments-wrap__avatar">{currentPhoto.created_by}</span>
+                                                    <span className="comments-wrap__avatar">{comment.curUser.name}</span>
                                                 </div>
                                                 <div className="comments-wrap__block">
                                                     <p className="comments-wrap__text">

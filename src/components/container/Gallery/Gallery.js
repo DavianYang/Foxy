@@ -13,6 +13,7 @@ import { addLike, fetchLike, deleteLike } from '../../../actions/likesAction';
 
 import iconSet from '../../../img/selection.json';
 import IcomoonReact, {iconList} from 'icomoon-react';
+import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 class Gallery extends React.Component {
     constructor(props){
@@ -29,11 +30,11 @@ class Gallery extends React.Component {
     
     handleLikes = (e) => {
         e.preventDefault();
-        const btn = e.target.closest('.gallery__image-link');
-        const curID = e.target.parentElement.parentElement.parentElement.dataset.photoid;
-
-        if( btn && this.props.currentUser){
+        const btn = e.target.closest('.gallery__icon--love');
+        if(btn && this.props.currentUser){
+            const curID = e.target.parentElement.parentElement.parentElement.parentElement.dataset.photoid;
             // User has NOT yet liked the current photo
+            console.log(this.Liked(curID));
             if(!this.Liked(curID)){
                 // New Like
                 const like = {
@@ -41,22 +42,22 @@ class Gallery extends React.Component {
                     user: this.props.currentUser.name
                 };
                 console.log('LIKED!!')
-                console.log(like);
+
                 // Add Like to state
                 this.props.addLike(like);
-
+                
             // User Has liked to the current photo
-            } else{
+            } else {
                 // Remove like from list
                 const photo = this.props.likes.find(el => el.photoID === curID);
 
                 // Delete Photo
                 this.props.deleteLike(photo.id);
-
+                
                 console.log('NOT LIKED!!');
                 
             }            
-        } else {
+        } else if(!this.props.currentUser){
             alert('Please Log in!!!');
         }
     }
@@ -88,13 +89,13 @@ class Gallery extends React.Component {
                                                             <figcaption className="gallery__caption gallery__caption--sub gallery__caption--sub-1">{time.month} / {time.day} / {time.year}</figcaption>
                                                             <figcaption className="gallery__caption gallery__caption--sub gallery__caption--sub-2">{time.hour} : {time.minute}</figcaption>
                                                             <figcaption className="gallery__caption gallery__caption--sub gallery__caption--sub-3">
-                                                                <div>
+                                                                <div className="gallery__image-love">
                                                                 <Link to="#" onClick={this.handleLikes} className="gallery__image-link">
                                                                 <IcomoonReact iconSet={iconSet} icon={this.Liked(photo.id) ? 'heart' : 'heart-outlined'} className="gallery__icon gallery__icon--love"/>
                                                                 </Link>
                                                                 </div>
                                                                 
-                                                                <div>
+                                                                <div className="gallery__image-collection">
                                                                 <Link to="#">
                                                                 <IcomoonReact iconSet={iconSet} icon="circle-with-plus" className="gallery__icon gallery__icon--collection"/>
                                                                 </Link> 
